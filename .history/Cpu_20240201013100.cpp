@@ -244,13 +244,3 @@ void readMemoryFromFile(const std::string &filename, Cpu &cpu)
 
     file.close();
 }
-
-// Function to get instrumentation data
-void Cpu::getInstrumentationData(unsigned int &cyclesExecuted,
-                                 unsigned int &memoryAccessCycles,
-                                 unsigned int &writeBackCycles) const
-{
-    cyclesExecuted = totalCyclesExecuted;
-    memoryAccessCycles = totalMemoryAccessCycles;
-    writeBackCycles = totalWriteBackCycles;
-}
