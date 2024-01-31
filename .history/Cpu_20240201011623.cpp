@@ -15,11 +15,7 @@
 *
 **************************************************************************/
 #include <stdio.h>
-#include <string>
-#include <fstream>
-
 #include "Cpu.h"
-#include <iostream>
 
 /*************************************************************************
 * Student modifications should go here to give the proper values for these
@@ -183,46 +179,4 @@ void Cpu::dump()
     * STUDENT CODE
     * This would be a great place to output your instrumention results
     ******************************************************************/
-}
-
-// Function to read program instructions and data into memories
-void readMemoryFromFile(const std::string &filename, Cpu &cpu)
-{
-    std::ifstream file(filename);
-    if (!file.is_open())
-    {
-        std::cerr << "Error opening file: " << filename << std::endl;
-        return;
-    }
-
-    std::string line;
-    while (std::getline(file, line))
-    {
-        // Ignore comments (lines starting with '#')
-        if (line.empty() || line[0] == '#')
-        {
-            continue;
-        }
-
-        std::istringstream iss(line);
-        std::string addressStr, memTypeStr, dataStr;
-        iss >> addressStr >> memTypeStr >> dataStr;
-
-        // Convert hex strings to integers
-        unsigned int address = std::stoul(addressStr, nullptr, 16);
-        int memType = std::stoi(memTypeStr);
-        unsigned int data = std::stoul(dataStr, nullptr, 16);
-
-        // Check memory type and update the corresponding memory in the CPU
-        if (memType == 1)
-        {
-            cpu.setImem(address, data);
-        }
-        else if (memType == 0)
-        {
-            cpu.setDmem(address, data);
-        }
-    }
-
-    file.close();
 }

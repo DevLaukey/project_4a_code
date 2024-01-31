@@ -16,10 +16,7 @@
 **************************************************************************/
 #include <stdio.h>
 #include <string>
-#include <fstream>
-
 #include "Cpu.h"
-#include <iostream>
 
 /*************************************************************************
 * Student modifications should go here to give the proper values for these
@@ -184,7 +181,6 @@ void Cpu::dump()
     * This would be a great place to output your instrumention results
     ******************************************************************/
 }
-
 // Function to read program instructions and data into memories
 void readMemoryFromFile(const std::string &filename, Cpu &cpu)
 {
