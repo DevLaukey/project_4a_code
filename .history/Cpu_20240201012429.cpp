@@ -17,16 +17,13 @@
 #include <stdio.h>
 #include <string>
 #include <fstream>
-#include <sstream>
+
 #include "Cpu.h"
 #include <iostream>
 
 /*************************************************************************
 * Student modifications should go here to give the proper values for these
 * macro definitions
-
-
-
 **************************************************************************/
 // BITS(x, start, end) a macro function that takes three integer arguments
 //    the output of the function will be bits start-end of of value x but
@@ -44,17 +41,7 @@
 #define OP_SW       
 #define OP_RTYPE    
 #define OP_BEQ      
-#define OP_JMP
-
-#define BITS(x, start, end) ((x >> start) & ((1 << (end - start + 1)) - 1))
-
-#define SIGN_EXT(x) ((signed int)((x & 0x8000) ? (x | 0xFFFF0000) : x))
-
-#define OP_LW 0x23
-#define OP_SW 0x2B
-#define OP_RTYPE 0x00
-#define OP_BEQ 0x04
-#define OP_JMP 0x02
+#define OP_JMP      
 
 //********************************************
 // Constructor
